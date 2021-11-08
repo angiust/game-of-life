@@ -7,6 +7,12 @@
     <script src="main.js" charset="utf-8"></script>
   </head>
   <body>
+    <form>
+      <label for="row">numero righe</label>
+      <input type="number" name="row" value="6" min="1" max="100" id="row" onchange="updateRowsColumns()">
+      <label for="col">numero colonne</label>
+      <input type="number" name="col" value="6" min="1" max="100" id="col" onchange="updateRowsColumns()">
+    </form>
     <table id="griglia">
     <tr>
       <td onclick="toggle(this)"></td>
