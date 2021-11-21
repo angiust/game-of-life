@@ -6,64 +6,22 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body onload="updateRowsColumns()">
     <form>
       <label for="row">numero righe</label>
-      <input type="number" name="row" value="6" min="1" max="100" id="row" onchange="updateRowsColumns()">
+      <input type="number" name="row" value="50" min="1" max="100" id="row" onchange="updateRowsColumns()">
       <label for="col">numero colonne</label>
-      <input type="number" name="col" value="6" min="1" max="100" id="col" onchange="updateRowsColumns()">
+      <input type="number" name="col" value="50" min="1" max="100" id="col" onchange="updateRowsColumns()">
+      <label for="timerLenght">numero millisecondi</label>
+      <input type="number" name="timerLenght" value="500" min="1" max="2000" id="timerLenght" onchange="updateTimer()">
       <button type="button" onclick="updateGrid()">aggiorna</button>
+      <button type="button" onclick="play()">play</button>
+      <button type="button" onclick="stop()">pause</button>
     </form>
     <table id="griglia">
     <tr>
       <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
     </tr>
-    <tr>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-    </tr>
-    <tr>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-    </tr>
-    <tr>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-    </tr>
-    <tr>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-    </tr>
-    <tr>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-      <td onclick="toggle(this)"></td>
-    </tr>
-  </table>
-  <!-- <p onclick="toggle()" id="reg">registro</p> -->
+    </table>
   </body>
 </html>

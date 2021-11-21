@@ -70,7 +70,6 @@ function updateGrid() {
   var nrow = parseInt(document.getElementById('row').value, 10);
   var ncol = parseInt(document.getElementById('col').value, 10);
   var aggiornamenti = new Array(nrow).fill(0);
-  console.log(nrow, ncol, aggiornamenti);
   for (var i = 0; i < aggiornamenti.length; i++)
     aggiornamenti[i] = new Array(ncol).fill(false);
   for (var i = 0; i < aggiornamenti.length; i++)
@@ -82,4 +81,23 @@ function updateGrid() {
         document.getElementById("griglia").rows[i].cells[j].classList.add("black");
       else
         document.getElementById("griglia").rows[i].cells[j].classList.remove("black");
+}
+
+var timer = null;
+
+function play() {
+  var timerLenght = document.getElementById('timerLenght').value;
+  timer = setInterval(updateGrid, timerLenght);
+}
+
+function stop() {
+  clearTimeout(timer);
+  timer = null;
+}
+
+function updateTimer() {
+  if (timer) {
+    stop();
+    play();
+  }
 }
