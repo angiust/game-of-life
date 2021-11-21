@@ -86,8 +86,10 @@ function updateGrid() {
 var timer = null;
 
 function play() {
-  var timerLenght = document.getElementById('timerLenght').value;
-  timer = setInterval(updateGrid, timerLenght);
+  if (!timer) {
+    var timerLenght = document.getElementById('timerLenght').value;
+    timer = setInterval(updateGrid, timerLenght);
+  }
 }
 
 function stop() {
